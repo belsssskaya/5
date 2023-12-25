@@ -21,7 +21,9 @@ def generate_matrix(n):
     matrix = [[random.randint(1, 100) for _ in range(n)] for _ in range(n)]
     return matrix
 
-
+def sum_matrices(matrix1, matrix2, n):
+    sum_matrix = [[matrix1[i][j] + matrix2[i][j] for j in range(n)] for i in range(n)]
+    return sum_matrix
 
 
 
@@ -50,6 +52,10 @@ def main():
             print("Матрица 2:")
             print_matrix(matrix2)
         elif choice == "3":
+            try:
+                sum_matrix = sum_matrices(matrix1, matrix2, n)
+                print("Сумма матриц:")
+                print_matrix(sum_matrix)
 
 if __name__ == "__main__":
             main()
