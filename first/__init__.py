@@ -25,7 +25,9 @@ def sum_matrices(matrix1, matrix2, n):
     sum_matrix = [[matrix1[i][j] + matrix2[i][j] for j in range(n)] for i in range(n)]
     return sum_matrix
 
-
+def print_matrix(matrix):
+    for row in matrix:
+        print(row)
 
 def main():
     while True:
@@ -56,6 +58,14 @@ def main():
                 sum_matrix = sum_matrices(matrix1, matrix2, n)
                 print("Сумма матриц:")
                 print_matrix(sum_matrix)
+            except NameError:
+                print("Ошибка! Пожалуйста, сначала выберите пункт 1 или 2 для ввода или генерации матрицы.")
+        elif choice == "4":
+            print("Программа завершена.")
+            break
+        else:
+            print("Неверный выбор. Пожалуйста, выберите пункт из меню (1-4).")
+            print()
 
 if __name__ == "__main__":
             main()
