@@ -44,13 +44,38 @@ def main():
         print("4. Выход")
         choice = (input("Введите номер выбранного пункта: "))
         if choice == "1":
-            pass
+            n = int(input("Введите размерность матрицы: "))
+            matrix1 = input_matrix(n)
+            matrix2 = input_matrix(n)
+            print("Матрица 1:")
+            print_matrix(matrix1)
+            print("Матрица 2:")
+            print_matrix(matrix2)
         elif choice == "2":
-            pass
+            n = int(input("Введите размерность матрицы: "))
+            matrix1 = generate_matrix(n)
+            matrix2 = generate_matrix(n)
+            print("Матрица 1:")
+            print_matrix(matrix1)
+            print("Матрица 2:")
+            print_matrix(matrix2)
+
         elif choice == "3":
-            pass
+            try:
+                sum_matrix = sum_matrices(matrix1, matrix2, n)
+                det_matrix1 = determinant(sum_matrix)
+                print("Сумма матриц:")
+                print_matrix(sum_matrix)
+                print("Определитель суммы матриц:")
+                print(det_matrix1)
+            except NameError:
+                print("Ошибка! Пожалуйста, сначала выберите пункт 1 или 2 для ввода или генерации матрицы.")
         elif choice == "4":
-            pass
+            print("Программа завершена.")
+            break
+        else:
+            print("Неверный выбор. Пожалуйста, выберите пункт из меню (1-4).")
+            print()
 
 if __name__ == "__main__":
             main()
